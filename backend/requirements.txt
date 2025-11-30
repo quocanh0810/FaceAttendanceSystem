@@ -7,3 +7,4 @@ numpy
 opencv-python
 insightface
 pydantic-settings
+onnxruntime

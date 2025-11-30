@@ -2,6 +2,8 @@ from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from sqlalchemy.sql import func
 from app.models.base import Base
 
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, Text
+
 
 class Student(Base):
     __tablename__ = "students"
@@ -11,4 +13,8 @@ class Student(Base):
     full_name = Column(String(255), nullable=False)
     class_name = Column(String(100), nullable=True)
     face_registered = Column(Boolean, default=False) #check embedding
+
+    # Lưu embedding dạng JSON string (list float)
+    face_embedding = Column(Text, nullable=True)
+
     created_at = Column(DateTime(timezone=True), server_default=func.now())
