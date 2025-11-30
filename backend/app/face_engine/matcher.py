@@ -5,7 +5,7 @@ import numpy as np
 
 def cosine_similarity(a: np.ndarray, b: np.ndarray) -> float:
     """
-    Cosine similarity giữa 2 vector embedding.
+    Cosine similarity 2 vector embedding.
     Kết quả: [-1, 1], càng gần 1 càng giống.
     """
     if a is None or b is None:
