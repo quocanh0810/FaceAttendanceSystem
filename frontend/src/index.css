@@ -263,8 +263,9 @@ textarea:focus {
 }
 
 .table td {
-  padding: 8px 10px;
-  border-bottom: 1px solid #f3f4f6;
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  font-size: 14px;
 }
 
 .table tr:hover td {
@@ -301,4 +302,128 @@ textarea:focus {
 
 .text-xs {
   font-size: 12px;
+}
+
+.table tbody tr.hover-row:hover {
+  background: #f9fafb;
+}
+
+.cell-id,
+.cell-code,
+.cell-class {
+  white-space: nowrap;
+  font-size: 13px;
+  color: #475569;
+}
+
+.cell-id {
+  text-align: center;
+  width: 48px;
+}
+
+.cell-face {
+  min-width: 260px;
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-success {
+  background-color: #ecfdf3;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.badge-warning {
+  background-color: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fed7aa;
+}
+
+/* Nút enroll trong bảng */
+.btn-enroll {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  background: #020617;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.15);
+  transition: transform 0.08s ease-out, box-shadow 0.08s ease-out,
+    background-color 0.08s ease-out;
+}
+
+.btn-enroll:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.25);
+}
+
+.btn-enroll:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.2);
+}
+
+.btn-enroll:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.face-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px; 
+}
+
+.table th.text-center,
+.table td.text-center {
+  text-align: center;
+}
+
+
+.table th.face-col,
+.table td.face-col {
+  text-align: center;
+  width: 260px;
+}
+
+/* Bảng students */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px 16px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.table th:nth-child(5),
+.table td:nth-child(5) {
+  text-align: center;
+}
+
+.face-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;      
+  white-space: nowrap;
 }

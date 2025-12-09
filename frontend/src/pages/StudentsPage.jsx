@@ -113,12 +113,15 @@ export default function StudentsPage() {
             </div>
           </div>
 
-          <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
+          <div className="mt-3 flex items-center gap-2">
             <button type="submit" className="btn">
               + Thêm sinh viên
             </button>
-            {loading && <span className="text-xs text-muted">Đang xử lý...</span>}
+            {loading && (
+              <span className="text-xs text-muted">Đang xử lý...</span>
+            )}
           </div>
+
           {errMsg && <p className="text-error">{errMsg}</p>}
         </form>
       </div>
@@ -128,11 +131,11 @@ export default function StudentsPage() {
           <div>
             <div className="card-title">Danh sách sinh viên</div>
             <div className="card-subtitle">
-              Dữ liệu đang lấy từ API FastAPI `/api/students/`.
+              Dữ liệu đang lấy từ API FastAPI <code>/api/students/</code>.
             </div>
           </div>
           <button onClick={fetchStudents} className="btn btn-ghost btn-sm">
-            🔄 Refresh
+            Refresh
           </button>
         </div>
 
@@ -146,20 +149,24 @@ export default function StudentsPage() {
         {students.length > 0 && (
           <div className="table-wrapper">
             <table className="table">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Mã SV</th>
-                  <th>Họ tên</th>
-                  <th>Lớp</th>
-                  <th>Face</th>
-                </tr>
-              </thead>
-              <tbody>
-                {students.map((s) => (
-                  <StudentItem key={s.id} student={s} />
-                ))}
-              </tbody>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Mã SV</th>
+                <th>Họ tên</th>
+                <th>Lớp</th>
+                <th>FACE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {students.map((s) => (
+                <StudentItem
+                  key={s.id}
+                  student={s}
+                  onAfterEnroll={fetchStudents}
+                />
+              ))}
+            </tbody>
             </table>
           </div>
         )}

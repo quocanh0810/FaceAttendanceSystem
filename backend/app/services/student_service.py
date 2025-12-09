@@ -48,3 +48,6 @@ def create_student(db: Session, data: StudentCreate) -> Student:
     db.commit()
     db.refresh(student)
     return student
+
+def get_students(db: Session) -> List[Student]:
+    return db.query(Student).order_by(Student.id.desc()).all()
