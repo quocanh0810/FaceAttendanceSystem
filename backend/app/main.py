@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .config import settings
 from .models.base import Base, engine
 from .api import students, classes, sessions, attendance
-from . import models  # 🔥 dòng này rất quan trọng
+from . import models
 
 Base.metadata.create_all(bind=engine)
 
